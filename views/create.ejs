@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Post</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  <h1>Create a Post</h1>
+  <form action="/posts/create" method="POST" enctype="multipart/form-data">
+    <label for="image">Image:</label>
+    <input type="file" id="image" name="image" required>
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" required></textarea>
+    <button type="submit">Create Post</button>
+  </form>
+  <%- include('partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Post Details</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  <h1>Post Details</h1>
+  <img src="<%= post.imagePath %>" alt="Post Image" width="500">
+  <p><%= post.description %></p>
+  <h2>Comments</h2>
+  <ul>
+    <% post.comments.forEach(comment => { %>
+      <li><%= comment.comment %></li>
+    <% }) %>
+  </ul>
+  <form action="/comments/<%= post.id %>" method="POST">
+    <label for="comment">Add a comment:</label>
+    <input type="text" id="comment" name="comment" required>
+    <button type="submit">Submit</button>
+  </form>
+  <%- include('partials/footer') %>
+</body>
+</html>
